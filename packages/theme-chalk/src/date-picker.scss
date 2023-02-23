@@ -58,7 +58,7 @@ button {
   }
   .isNotCurrentMonth {
     color: #ccc;
-    cursor: not-allowed;
+    pointer-events: none;
   }
   .isNotCurrentMonth:hover {
     background-color: #fff !important;
@@ -69,4 +69,14 @@ button {
     color: #fff;
     font-weight: 700;
   }
+}
+
+.tas-datepicker-transition-enter-active,
+.tas-datepicker-transition-leave-active {
+  opacity: 1;
+  transition: all 0.5s ease-out;
+}
+.tas-datepicker-transition-enter-from,
+.tas-datepicker-transition-leave-to {
+  opacity: 0;
 }

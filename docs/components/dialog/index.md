@@ -8,6 +8,12 @@
       border-radius: 5px;
       padding:20px
   }
+  details > summary:first-of-type {
+      font-size: 10px;
+      padding: 8px 0;
+      cursor: pointer;
+      color: #1989fa;
+  }
 </style>
 # Dialog 对话框
 ## 基础用法
@@ -24,36 +30,25 @@
   <tass-button type="primary" :visible="!normalVisible" @click="changeView">dialog</tass-button>
   <tass-dialog
     :visible="normalVisible"
-    width="500px"
-    title="dialog"
     @cancel="handleClickCancelButton"
     @confirm="handleConfirmButton"
   >
   </tass-dialog>
 </template>
 
-<script>
-import { ref } from 'vue'
-export default {
-  setup () {
-    let normalVisible = ref(false)
-    function changeView () {
-      normalVisible.value = !normalVisible.value
-    }
-    function handleClickCancelButton () {
-      normalVisible.value = !normalVisible.value
-    }
-    function handleConfirmButton () {
-      normalVisible.value = !normalVisible.value
-    }
-    return {
-      normalVisible,
-      changeView,
-      handleClickCancelButton,
-      handleConfirmButton
-    }
+<script lang="ts" setup>
+  import { ref } from 'vue'
+
+  let normalVisible = ref(false)
+  changeView = ()=> {
+    normalVisible.value = !normalVisible.value
   }
-}
+  handleClickCancelButton = ()=> {
+    normalVisible.value = !normalVisible.value
+  }
+  handleConfirmButton = ()=> {
+    normalVisible.value = !normalVisible.value
+  }
 </script>
 
 <style>
@@ -61,8 +56,8 @@ export default {
 ```
 </details>
 
-## 自定义内容和宽度
-通过设置title 与 width , 来展示内容和宽度。
+## 自定义内容
+通过设置title,来展示自定义内容。
 <div class="example">
     <Dialog></Dialog>
 </div>
@@ -73,39 +68,29 @@ export default {
 ```vue
 <template>
   <template>
-  <tass-button type="primary" :visible="!normalVisible" @click="changeView">自定义内容和宽度</tass-button>
+  <tass-button type="primary" :visible="!normalVisible" @click="changeView">自定义内容</tass-button>
   <tass-dialog
     :visible="normalVisible"
     title="自定义内容"
-    width="400px"
     @cancel="handleClickCancelButton"
     @confirm="handleConfirmButton"
   >
   </tass-dialog>
 </template>
 
-<script>
-import { ref } from 'vue'
-export default {
-  setup () {
-    let normalVisible = ref(false)
-    function changeView () {
-      normalVisible.value = !normalVisible.value
-    }
-    function handleClickCancelButton () {
-      normalVisible.value = !normalVisible.value
-    }
-    function handleConfirmButton () {
-      normalVisible.value = !normalVisible.value
-    }
-    return {
-      normalVisible,
-      changeView,
-      handleClickCancelButton,
-      handleConfirmButton
-    }
+<script lang="ts" setup>
+  import { ref } from 'vue'
+
+  let normalVisible = ref(false)
+  changeView = ()=> {
+    normalVisible.value = !normalVisible.value
   }
-}
+  handleClickCancelButton = ()=> {
+    normalVisible.value = !normalVisible.value
+  }
+  handleConfirmButton = ()=> {
+    normalVisible.value = !normalVisible.value
+  }
 </script>
 
 </template>

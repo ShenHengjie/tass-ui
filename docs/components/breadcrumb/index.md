@@ -1,3 +1,10 @@
+<!--
+ * @Descripttion: Spicy chicken
+ * @Author: YuShu Xiao
+ * @Date: 2023-02-12 11:38:41
+ * @LastEditors: Huccct
+ * @LastEditTime: 2023-02-22 22:34:44
+-->
 <style>
     details > summary:first-of-type {
       font-size: 10px;
@@ -7,7 +14,7 @@
   }
 </style>
 # Breadcrumb 面包屑
-Breadcrumb 面包屑
+显示当前页面的路径，快速返回之前的任意页面。
 ## 基础用法
 在 tass-breadcrumb 中使用 tass-breadcrumb-item 标签表示从首页开始的每一级。 该组件接受一个 String 类型的参数 separator-icon来作为分隔符。 默认值为"chevronright"。
 
@@ -54,6 +61,27 @@ Breadcrumb 面包屑
     <tass-breadcrumb-item>promotion management</tass-breadcrumb-item>
     <tass-breadcrumb-item to="/">promotion list</tass-breadcrumb-item>
     <tass-breadcrumb-item>promotion list</tass-breadcrumb-item>
+  </tass-breadcrumb>
+</template>
+```
+</details>
+
+## 路由跳转记录
+通过设置replace 如果设置该属性为 true, 导航将不会留下历史记录
+<div class="example" >
+<tass-breadcrumb separator-icon="rocket">
+    <tass-breadcrumb-item  :to="{ path: '/' }" replace>homepage</tass-breadcrumb-item>
+    <tass-breadcrumb-item>promotion management</tass-breadcrumb-item>
+  </tass-breadcrumb>
+</div>
+<details>
+<summary>展开查看</summary>
+
+```vue
+<template>
+  <tass-breadcrumb separator-icon="rocket">
+    <tass-breadcrumb-item  :to="{ path: '/' }" replace>homepage</tass-breadcrumb-item>
+    <tass-breadcrumb-item>promotion management</tass-breadcrumb-item>
   </tass-breadcrumb>
 </template>
 ```
